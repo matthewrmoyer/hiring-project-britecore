@@ -1,24 +1,38 @@
 <template>
-    <div>
+    <div class="vertical-container">
         <h1>{{ title }}</h1>
-        <p>{{ riskType }}</p>
-        <button @click="updateRiskType">Update Risk Type</button>
+        <input 
+            type="text" 
+            name="riskType" 
+            id="risk-type" 
+            placeholder="Enter Risk Type" 
+            v-model="riskType" 
+        >
+        <button>+</button>
+        <button>Submit</button>
+
+        <p>Risk Type: {{ riskType }}</p>
+
     </div>
 </template>
 
 <script>
-    import { mapGetters } from 'vuex'
     import { mapActions } from 'vuex'
     export default {
         data() {
             return {
-                title: 'Add Risk'
+                title: 'Add Risk',
             }
         },
         computed: {
-            ...mapGetters('addRisk', [
-                'riskType'
-            ])
+            riskType: {
+                get() {
+                    return this.$store.getters['addRisk/riskType']
+                },
+                set() {
+                    return this.updateRiskType(event.target.value)
+                }
+            }
         },
         methods: {
             ...mapActions('addRisk', [
@@ -29,5 +43,10 @@
 </script>
 
 <style scoped>
-
+    .vertical-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
