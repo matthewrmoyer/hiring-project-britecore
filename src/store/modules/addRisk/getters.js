@@ -1,0 +1,1 @@
+export const riskType = (state) => state.riskType
