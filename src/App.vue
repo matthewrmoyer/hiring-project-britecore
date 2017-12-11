@@ -1,7 +1,22 @@
 <template>
   <div id="app">
-    <router-link to="/addRisk">Add Risk</router-link>
-    <router-view/>
+
+  <nav>
+    <div class="nav-wrapper">
+      <ul id="nav" class="left">
+        <a href="#" class="brand-logo">Logo</a>
+      </ul>      
+      <ul id="nav" class="right">
+        <li><router-link to="/addRisk">Add Risk</router-link></li>
+        <li><router-link to="/">Home</router-link></li>        
+      </ul>
+    </div>
+  </nav>
+          
+
+  <router-view/>
+
+
   </div>
 </template>
 

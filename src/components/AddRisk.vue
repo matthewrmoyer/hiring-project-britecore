@@ -1,16 +1,27 @@
 <template>
-    <div class="vertical-container">
-        <h1>{{ title }}</h1>
-        <input 
-            type="text" 
-            name="riskType" 
-            id="risk-type" 
-            placeholder="Enter Risk Type" 
-            v-model="riskType" 
-        >
-        <button>+</button>
-        <button>Submit</button>
-
+    <div>
+        <form class = "col s12">
+            <h3>{{ title }}</h3>
+            <div class="row">
+            <label for="risk-type" class="left">Risk Type</label>
+            <input 
+                class="col s12"
+                type="text" 
+                name="riskType" 
+                id="risk-type" 
+                placeholder="Automobile" 
+                v-model="riskType" 
+            >
+            </div>
+        </form>
+        <div class="row">
+            <a class="waves-effect waves-light btn">Add Field</a>
+        </div>
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
         <p>Risk Type: {{ riskType }}</p>
 
     </div>
