@@ -17,6 +17,11 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <md-card>
+      <md-card-header>Yo </md-card-header>
+      <md-card-content>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas aperiam repudiandae distinctio eum, corrupti doloremque autem atque. Aliquam molestiae earum architecto hic est natus, fugiat explicabo impedit eaque perferendis voluptatem!</md-card-content>
+      <md-button class="md-raised md-primary">Md Raised Primary</md-button>
+    </md-card>
   </div>
 </template>
 
