@@ -1,18 +1,69 @@
 <template>
-    <div class="vertical-container">
-        <h1>{{ title }}</h1>
-        <input 
-            type="text" 
-            name="riskType" 
-            id="risk-type" 
-            placeholder="Enter Risk Type" 
-            v-model="riskType" 
-        >
-        <button>+</button>
-        <button>Submit</button>
+    <div>
+        <form class = "col s12">
+            <h3>{{ title }}</h3>
+            <div class="row">
+            <label for="risk-type" class="left">Risk Type</label>
+            <input 
+                class="col s12"
+                type="text" 
+                name="riskType" 
+                id="risk-type" 
+                placeholder="Automobile" 
+                v-model="riskType" 
+            >
+            </div>
+        </form>
+              <!-- Modal Trigger -->
 
+
+        <!-- Modal Structure -->
+        <div id="addFieldModal" class="modal">
+            <div class="modal-content">
+            <h4>Add A Field and a Data Type</h4>
+            <div class="row">
+                <label for="new-field-name" class="left">New Field Name</label>
+                <input 
+                    type="text" 
+                    name="newFieldName" 
+                    id="new-field-name"
+                    placeholder="Address"
+                >
+            </div>
+            <br>
+            <h6>Select the Data Type of this Field</h6>
+            <div class="row radio-container">
+                <!-- <label for="new-field-type" class="left">New Field Value</label> -->
+                <p>
+                    <input name="group1" type="radio" id="radio1" data="Text" @click="setFieldType"/>
+                    <label for="radio1">Text</label>
+                </p>
+                
+                <p>
+                    <input name="group1" type="radio" data="Number" id="radio2" @click="setFieldType"/>
+                    <label for="radio2">Number</label>
+                </p>
+                <p>
+                    <input name="group1" type="radio" data="Date" id="radio3" @click="setFieldType"/>
+                    <label for="radio3">Date</label>
+                </p>
+
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Add Field</a>
+            </div>
+        </div>
+        </div>
+    
+        <div class="row">
+            <a class="waves-effect waves-light btn modal-trigger" href="#addFieldModal">Add Field</a>
+        </div>    
+        <div class="row">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
         <p>Risk Type: {{ riskType }}</p>
-
     </div>
 </template>
 
@@ -23,6 +74,12 @@
             return {
                 title: 'Add Risk',
             }
+        },
+        created (){
+            $(document).ready(() => {
+            console.log('created');
+                $('.modal').modal();
+            })
         },
         computed: {
             riskType: {
@@ -37,7 +94,10 @@
         methods: {
             ...mapActions('addRisk', [
                 'updateRiskType'
-            ])
+            ]),
+            setFieldType() {
+                console.log(event.target.attributes.data.value);
+            }
         }
     }
 </script>
@@ -48,5 +108,9 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .radio-container{
+        display: flex;
+        justify-content: space-between;
     }
 </style>

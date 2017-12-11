@@ -1,8 +1,21 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-link to="/addRisk">Add Risk</router-link>
-    <router-view/>
+
+  <nav>
+    <div class="nav-wrapper">
+      <ul id="nav" class="left">
+        <li><router-link to="/" class="brand-logo">Logo</router-link></li> 
+      </ul>      
+      <ul id="nav" class="right">
+        <li><router-link to="/addRisk">Add Risk</router-link></li>     
+      </ul>
+    </div>
+  </nav>
+          
+
+  <router-view/>
+
+
   </div>
 </template>
 
