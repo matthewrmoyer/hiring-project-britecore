@@ -4,11 +4,10 @@
   <nav>
     <div class="nav-wrapper">
       <ul id="nav" class="left">
-        <a href="#" class="brand-logo">Logo</a>
+        <li><router-link to="/" class="brand-logo">Logo</router-link></li> 
       </ul>      
       <ul id="nav" class="right">
-        <li><router-link to="/addRisk">Add Risk</router-link></li>
-        <li><router-link to="/">Home</router-link></li>        
+        <li><router-link to="/addRisk">Add Risk</router-link></li>     
       </ul>
     </div>
   </nav>
