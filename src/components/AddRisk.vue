@@ -28,6 +28,7 @@
                     name="newFieldName" 
                     id="new-field-name"
                     placeholder="Address"
+                    @input="setFieldName"
                 >
             </div>
             <br>
@@ -50,7 +51,7 @@
 
             </div>
             <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Add Field</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" @click="addField({type: fieldType, name: fieldName})">Add Field</a>
             </div>
         </div>
         </div>
@@ -73,6 +74,8 @@
         data() {
             return {
                 title: 'Add Risk',
+                fieldType: '',
+                fieldName: ''
             }
         },
         created (){
@@ -89,14 +92,18 @@
                 set() {
                     return this.updateRiskType(event.target.value)
                 }
-            }
+            },
         },
         methods: {
             ...mapActions('addRisk', [
-                'updateRiskType'
+                'updateRiskType',
+                'addField'
             ]),
             setFieldType() {
-                console.log(event.target.attributes.data.value);
+                this.fieldType = event.target.attributes.data.value
+            },
+            setFieldName() {
+                this.fieldName = event.target.value
             }
         }
     }
