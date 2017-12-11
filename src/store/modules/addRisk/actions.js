@@ -5,3 +5,7 @@ export const updateRiskType = ({ commit }, payload) => {
 export const addField =({ commit }, payload) => {
     commit('addField', payload)
 }
+
+export const addFieldValue =({ commit }, payload) => {
+    commit('addFieldValue', payload)
+}
