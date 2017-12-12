@@ -1,12 +1,13 @@
 <template>
   <div id="app">
-
   <nav>
     <div class="nav-wrapper">
       <ul id="nav" class="left">
         <li><router-link to="/" class="brand-logo">Logo</router-link></li> 
       </ul>      
       <ul id="nav" class="right">
+        <li><router-link to="/risks">See Risks</router-link></li>     
+        
         <li><router-link to="/addRisk">Add Risk</router-link></li>     
       </ul>
     </div>
@@ -32,6 +33,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 </style>
