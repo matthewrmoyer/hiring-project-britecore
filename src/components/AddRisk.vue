@@ -3,9 +3,9 @@
         <form class = "col s12">
             <h3>{{ title }}</h3>
             <div class="row">
-            <label for="risk-type" class="left">Risk Type</label>
+            <label for="risk-type" class="left">Type the New Risk Type Below</label>
             <input 
-                class="col s12"
+                class="col s12 risk-type-input"
                 type="text" 
                 name="riskType" 
                 id="risk-type" 
@@ -55,8 +55,14 @@
             </div>
         </div>
         </div>
-        <ul>
+        <ul class="addedFields">
             <li v-for="field in fields" :key="field.name">
+                <div>
+                    <h5 class="addedFieldsHeading left">{{field.name}} Field of type {{field.type}}<i class="material-icons right green-check">check_circle</i></h5>
+                </div>                 
+            </li>
+            <!-- will use for creating risk of type page -->
+            <!-- <li v-for="field in fields" :key="field.name">
                     <div class="row">
 
                         <label for="new-field-name" class="left">{{field.name}}</label>
@@ -67,7 +73,7 @@
                             @input="setFieldValue"
                         />
                     </div>
-            </li>
+            </li> -->
         </ul>
         <div class="row">
             <a class="waves-effect waves-light btn modal-trigger" href="#addFieldModal">Add Field</a>
@@ -134,11 +140,8 @@
 </script>
 
 <style scoped>
-    .vertical-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    label {
+        font-size: 20px;
     }
     .radio-container{
         display: flex;
@@ -146,5 +149,20 @@
     }
     ul {
         list-style: none;
+    }
+    .addedFields {
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    .addedFieldsHeading {
+        text-transform: capitalize;
+    }
+    .green-check {
+        color: green;
+    }
+    .risk-type-input {
+        margin-top: 10px !important; 
+        font-size: 30px !important;
     }
 </style>

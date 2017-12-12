@@ -1,26 +1,15 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+    <h2>{{ msg }}</h2>
     <md-card>
-      <md-card-header>Yo </md-card-header>
-      <md-card-content>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas aperiam repudiandae distinctio eum, corrupti doloremque autem atque. Aliquam molestiae earum architecto hic est natus, fugiat explicabo impedit eaque perferendis voluptatem!</md-card-content>
-      <md-button class="md-raised md-primary">Md Raised Primary</md-button>
+      <md-card-header></md-card-header>
+      <md-card-content>
+        <p>There are lots of interesting things you can do here! One thing to explore the Risk Types page. There, you can see all of the risk types that users have added, as well as the fields associated with that risk type.</p>
+        <p>You can also naviagate to the 
+        <router-link to="/addRisk">Add Risk</router-link> 
+        page, where you can create a new risk type. For example, if you have a new client inquiring about Cyber Liability Coverage, you can create a form containing all of the necessary fields required to add this risk type.</p>
+        <p>If you get lost, you can always click the logo above to bring you home.</p>
+      </md-card-content>
     </md-card>
   </div>
 </template>
@@ -30,7 +19,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to the BriteCore Administration Page'
     }
   }
 }
