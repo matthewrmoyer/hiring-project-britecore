@@ -6,11 +6,14 @@
                 {{ risk }}
             </li>
         </ul>
+        <button @click="fetchData">getRisks</button>
     </div>
 </template>
 
 <script>
     import { mapGetters } from 'vuex'
+    import { mapActions } from 'vuex'
+
     export default {
         data() {
             return {
@@ -21,6 +24,18 @@
             ...mapGetters('allRisks', [
                 'risks'
             ])
+        },
+        methods: {
+            ...mapActions('allRisks', [
+                'getRisks',
+            ]),
+            fetchData() {
+                this.$http.get('https://britecore-backend.herokuapp.com/risks')
+                    .then(response => {
+                       return response.json();   
+                    })
+                    .then(data => console.log(data))
+            }
         }
     }
 </script>
