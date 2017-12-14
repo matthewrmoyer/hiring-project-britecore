@@ -6,7 +6,7 @@
                 {{ risk }}
             </li>
         </ul>
-        <button @click="fetchData">getRisks</button>
+        <button @click="getRisks">getRisks</button>
     </div>
 </template>
 

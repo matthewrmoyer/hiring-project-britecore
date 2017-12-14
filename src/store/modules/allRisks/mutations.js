@@ -1,3 +1,3 @@
-export const getRisks = (state) => {
-    console.log('getrisksmutation'); 
+export const addRiskData = (state, payload) => {
+    state.risks.push(payload)
 }
