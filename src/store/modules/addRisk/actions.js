@@ -17,19 +17,15 @@ export const postRisk = async ({ commit }, payload) => {
     console.log('post risk action');
     console.log(payload.type);
     payload.fields.forEach(field => console.log(field.name, field.type));
-
     try {
         let response = await (await Vue.http.post('https://britecore-backend.herokuapp.com/risks', payload)).json()
-        console.log(response); 
+        console.log(response);
+        try {
+            let fieldsResponse = await (await Vue.http.post('https://britecore-backend.herokuapp.com/fields', payload)).json()
+        } catch (error) {
+            console.log(error);
+        } 
     } catch (error) {
         console.log(error);
-    }
-
-    
-    
-    // commit('postRiskType', risks)
-    // commit('postRiskFields', risks)
-    
+    }    
 }
-
-// curl -i -X OPTIONS -H "http://localhost:8080/#/addRisk \ -H 'Access-Control-Request-Method: POST' \ -H 'Access-Control-Request-Headers: Content-Type, Authorization' \ "https://britecore-backend.herokuapp.com/risks"
