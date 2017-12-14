@@ -79,7 +79,7 @@
             <a class="waves-effect waves-light btn modal-trigger" href="#addFieldModal">Add Field</a>
         </div>    
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" @click="postRisk({type: riskType, fields: fields})">Submit
                 <i class="material-icons right">send</i>
             </button>
         </div>
@@ -120,7 +120,8 @@
         methods: {
             ...mapActions('addRisk', [
                 'updateRiskType',
-                'addField'
+                'addField',
+                'postRisk'
             ]),
             setFieldType() {
                 this.fieldType = event.target.attributes.data.value
