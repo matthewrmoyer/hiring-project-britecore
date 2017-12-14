@@ -7,11 +7,14 @@ import Vuex from 'vuex'
 
 import { store } from './store/store'
 
+import VueResource from 'vue-resource';
 import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 
 Vue.config.productionTip = false
 Vue.use(VueMaterial)
+Vue.use(VueResource)
+
 
 /* eslint-disable no-new */
 new Vue({
