@@ -6,8 +6,7 @@
         <li><router-link to="/" class="brand-logo">Logo</router-link></li> 
       </ul>      
       <ul id="nav" class="right">
-        <li><router-link to="/risks">See Risks</router-link></li>     
-        
+        <li><router-link to="/risks">See All Risks</router-link></li>     
         <li><router-link to="/addRisk">Add Risk</router-link></li>     
       </ul>
     </div>

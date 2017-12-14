@@ -7,6 +7,8 @@
             </li>
         </ul>
         <button @click="getRisks">getRisks</button>
+        <li><router-link to="/risk/8">See One Risks</router-link></li>     
+
     </div>
 </template>
 
