@@ -2,7 +2,7 @@
     <div>
         <h3>{{ title }}</h3>
         <ul>
-            <li v-for="risk in risks" :key="risk">
+            <li v-for="risk in risks" :key="risk.id">
                 {{ risk }}
             </li>
         </ul>
@@ -36,7 +36,11 @@
                     })
                     .then(data => console.log(data))
             }
+        },
+        mounted() {
+            this.getRisks()
         }
+
     }
 </script>
 

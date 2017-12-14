@@ -1,3 +1,7 @@
 export const addRiskData = (state, payload) => {
-    state.risks.push(payload)
+    payload.forEach(r => {
+        if(state.risks.filter(risk => risk.id === r.id).length === 0) {
+            state.risks.push(r)
+        }
+    })
 }
