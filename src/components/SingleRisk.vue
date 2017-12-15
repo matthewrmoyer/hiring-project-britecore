@@ -1,8 +1,22 @@
 <template>
     <div>
-        <h3>{{ title }}</h3>
-        <p>id: {{ id }}</p>
-        <p>risk: {{ risk }}</p>
+        <h3>{{ risk[0]['risk']['type'] }}</h3>
+        <!-- <p>risk: {{ risk[1] }}</p> -->
+        <ul class="fields">
+            <li v-for="field in risk[1]['fields']" :key="field.name">
+                <div class="row">
+                    <label :for="field.name" class="active left">{{field.name}}</label>
+                    <input name="field.name" :type="field.data_type" :placeholder="field.name">
+                    <!-- <label for="new-field-name" class="left">{{field.name}}</label>
+                    <input 
+                        name="field.name" 
+                        :type="field[0]" 
+                        :id="field.name" 
+                        @input="setFieldValue"
+                    /> -->
+                </div>
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -34,5 +48,23 @@
 </script>
 
 <style scoped>
+    label {
+        font-size: 20px;
+        text-transform: capitalize;
+    }
 
+    ul {
+        list-style: none;
+    }
+
+    .fields {
+        margin-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        margin-top: 10px !important; 
+        font-size: 30px !important;
+    }
 </style>

@@ -61,19 +61,6 @@
                     <h5 class="addedFieldsHeading left">{{field.name}} Field of type {{field.type}}<i class="material-icons right green-check">check_circle</i></h5>
                 </div>                 
             </li>
-            <!-- will use for creating risk of type page -->
-            <!-- <li v-for="field in fields" :key="field.name">
-                    <div class="row">
-
-                        <label for="new-field-name" class="left">{{field.name}}</label>
-                        <input 
-                            name="field.name" 
-                            :type="field.type" 
-                            :id="field.name" 
-                            @input="setFieldValue"
-                        />
-                    </div>
-            </li> -->
         </ul>
         <div class="row">
             <a class="waves-effect waves-light btn modal-trigger" href="#addFieldModal">Add Field</a>
