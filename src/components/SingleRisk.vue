@@ -7,13 +7,6 @@
                 <div class="row">
                     <label :for="field.name" class="active left">{{field.name}}</label>
                     <input name="field.name" :type="field.data_type" :placeholder="field.name">
-                    <!-- <label for="new-field-name" class="left">{{field.name}}</label>
-                    <input 
-                        name="field.name" 
-                        :type="field[0]" 
-                        :id="field.name" 
-                        @input="setFieldValue"
-                    /> -->
                 </div>
             </li>
         </ul>
