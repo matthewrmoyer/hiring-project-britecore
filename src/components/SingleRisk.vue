@@ -1,7 +1,6 @@
 <template>
     <div>
         <h3>{{ risk[0]['risk']['type'] }}</h3>
-        <!-- <p>risk: {{ risk[1] }}</p> -->
         <ul class="fields">
             <li v-for="field in risk[1]['fields']" :key="field.name">
                 <div class="row">

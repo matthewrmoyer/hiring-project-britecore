@@ -14,10 +14,6 @@
             >
             </div>
         </form>
-              <!-- Modal Trigger -->
-
-
-        <!-- Modal Structure -->
         <div id="addFieldModal" class="modal">
             <div class="modal-content">
             <h4>Add A Field and a Data Type</h4>
@@ -28,13 +24,13 @@
                     name="newFieldName" 
                     id="new-field-name"
                     placeholder="Address"
+                    v-model="fieldName"
                     @input="setFieldName"
                 >
             </div>
             <br>
             <h6>Select the Data Type of this Field</h6>
             <div class="row radio-container">
-                <!-- <label for="new-field-type" class="left">New Field Value</label> -->
                 <p>
                     <input name="group1" type="radio" id="radio1" data="text" @click="setFieldType"/>
                     <label for="radio1">Text</label>
@@ -48,10 +44,9 @@
                     <input name="group1" type="radio" data="date" id="radio3" @click="setFieldType"/>
                     <label for="radio3">Date</label>
                 </p>
-
             </div>
             <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" @click="addField({type: fieldType, name: fieldName})">Add Field</a>
+                <a href="#/addRisk" class="modal-action modal-close waves-effect waves-green btn-flat addFieldModal" @click="submitField">Add Field</a>
             </div>
         </div>
         </div>
@@ -66,7 +61,7 @@
             <a class="waves-effect waves-light btn modal-trigger" href="#addFieldModal">Add Field</a>
         </div>    
         <div class="row">
-            <button class="btn waves-effect waves-light" type="submit" name="action" @click="postRisk({type: riskType, fields: fields})">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action" @click="submitRisk">Submit
                 <i class="material-icons right">send</i>
             </button>
         </div>
@@ -87,7 +82,6 @@
         },
         created (){
             $(document).ready(() => {
-            console.log('created');
                 $('.modal').modal();
             })
         },
@@ -117,11 +111,19 @@
                 this.fieldName = event.target.value
             },
             setFieldValue() {
-                console.log(event.target.id);
-                
-                console.log(event.target.value);
                 this.$store.dispatch('addRisk/addFieldValue', {fieldName: event.target.id, fieldValue: event.target.value})
-                
+            },
+            async submitField(){
+                await this.addField({type: this.fieldType, name: this.fieldName})
+                this.clearFields()
+            },
+            clearFields() {
+                this.fieldName = ''
+                this.fieldType = ''
+            },
+            submitRisk() {
+                this.postRisk({type: this.riskType, fields: this.fields})
+                location.reload()
             }
         }
     }
@@ -152,5 +154,10 @@
     .risk-type-input {
         margin-top: 10px !important; 
         font-size: 30px !important;
+    }
+    .addFieldModal {
+        background-color: #00af9c;
+        color: white;
+        box-shadow: 1px 1px 5px gray;
     }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>{{ title }}</h3>
-        <p>Select a risk type below, to see the details associated with that risk type, or to create a new instance of that risk type</p>
+        <p class="flow-text">Select a risk type below, to see the details associated with that risk type, or to create a new instance of that risk type</p>
         <ul>
             <li v-for="risk in risks" :key="risk.id">
                 <router-link :to="`/risk/${risk.id}`">{{ risk.type }}</router-link>                    
@@ -34,13 +34,11 @@
                     .then(response => {
                        return response.json();   
                     })
-                    .then(data => console.log(data))
             }
         },
         mounted() {
             this.getRisks()
         }
-
     }
 </script>
 
@@ -54,5 +52,8 @@
     li {
         margin-top: 20px !important; 
         font-size: 30px !important;
+    }
+    p {
+        line-height: 1.25;
     }
 </style>
