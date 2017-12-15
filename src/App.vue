@@ -3,7 +3,7 @@
   <nav>
     <div class="nav-wrapper">
       <ul id="nav" class="left">
-        <li><router-link to="/" class="brand-logo">Logo</router-link></li> 
+        <li><router-link to="/" class="brand-logo">BriteCore</router-link></li> 
       </ul>      
       <ul id="nav" class="right">
         <li><router-link to="/risks">See All Risks</router-link></li>     

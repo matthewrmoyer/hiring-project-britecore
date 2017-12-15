@@ -1,13 +1,12 @@
 <template>
     <div>
         <h3>{{ title }}</h3>
+        <p>Select a risk type below, to see the details associated with that risk type, or to create a new instance of that risk type</p>
         <ul>
             <li v-for="risk in risks" :key="risk.id">
-                <router-link <router-link :to="`/risk/${risk.id}`">{{ risk }}</router-link>                    
+                <router-link :to="`/risk/${risk.id}`">{{ risk.type }}</router-link>                    
             </li>
         </ul>
-        <button @click="getRisks">getRisks</button>  
-
     </div>
 </template>
 
@@ -18,7 +17,7 @@
     export default {
         data() {
             return {
-                title: 'Showing All Risk Types'
+                title: 'All Risk Types'
             }
         },
         computed: {
@@ -46,5 +45,14 @@
 </script>
 
 <style scoped>
-
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 50vh;
+    }
+    li {
+        margin-top: 20px !important; 
+        font-size: 30px !important;
+    }
 </style>
