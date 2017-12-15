@@ -47,7 +47,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 50vh;
+        min-height: 25vh;
     }
     li {
         margin-top: 20px !important; 

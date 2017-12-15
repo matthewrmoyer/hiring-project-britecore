@@ -119,7 +119,6 @@
             },
             clearFields() {
                 this.fieldName = ''
-                this.fieldType = ''
             },
             submitRisk() {
                 this.postRisk({type: this.riskType, fields: this.fields})
