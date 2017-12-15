@@ -3,11 +3,10 @@
         <h3>{{ title }}</h3>
         <ul>
             <li v-for="risk in risks" :key="risk.id">
-                {{ risk }}
+                <router-link <router-link :to="`/risk/${risk.id}`">{{ risk }}</router-link>                    
             </li>
         </ul>
-        <button @click="getRisks">getRisks</button>
-        <li><router-link to="/risk/8">See One Risks</router-link></li>     
+        <button @click="getRisks">getRisks</button>  
 
     </div>
 </template>
