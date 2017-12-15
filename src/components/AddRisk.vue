@@ -121,9 +121,8 @@
                 this.fieldName = ''
                 this.fieldType = ''
             },
-            async submitRisk() {
-                await this.postRisk({type: this.riskType, fields: this.fields})
-                location.reload()
+            submitRisk() {
+                this.postRisk({type: this.riskType, fields: this.fields})
             }
         }
     }

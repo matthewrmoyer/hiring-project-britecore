@@ -27,5 +27,6 @@ export const postRisk = async ({ commit }, payload) => {
         } 
     } catch (error) {
         console.log(error);
-    }    
+    }
+    commit('resetAddRiskData')    
 }

@@ -12,3 +12,8 @@ export const addFieldValue = (state, payload) => {
     let targetIndex = state.fields.indexOf(targetField[0])
     state.fields[targetIndex].value = payload.fieldValue   
 }
+
+export const resetAddRiskData = (state, payload) => {
+    state.fields = []
+    state.riskType = ''
+}
